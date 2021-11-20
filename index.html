@@ -1,0 +1,79 @@
+<html lang="en">
+    
+<head>
+    
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="clases.js" ></script>    
+    <script src="./js/script.js" ></script>    
+    <title>Parcial labo 3</title>
+</head>
+<body>            
+                <h1>ABM PERSONAS</h1>              
+                <div class="row"> 
+                    <label>ID:</label> <input type="text" id="id"/> 
+                </div>
+                <div class="row"> 
+                    <label>Nombre:</label> <input type="text" id="nombre" placeholder="AGREGUE SU NOMBRE"/> 
+                </div>
+                <div class="row"> 
+                    <label>Apellido:</label> <input type="text" id="apellido" placeholder="AGREGUE SU APELLIDO"/>
+                </div>
+                <div class="row">  
+                    <label>Edad:</label> <input type="text" id="edad" placeholder="AGREGUE SU EDAD"/>
+                </div>
+                <div class="row">  
+                    <label>Sexo:</label>  <select id="sexo" id="sexo"> </select> 
+                </div>       
+                <div class="row">  
+                    <input type="button" value="Agregar" onclick="agregarCliente()"  />
+                    <input type="button" value="Eliminar" onclick="eliminarPersona()" /> 
+                    <input type="button" value="Limpiar" onclick="cleanData()" />
+                </div>
+
+                <h1>FILTROS</h1>
+                <div class="row">  
+                    <label>Filtrar por:</label> <select id="sexo_filtro" onchange="filtrarTabla()"> </select> <input type="button" value="x" onclick="LimpiarFiltro()"  />
+                </div>
+                <div class="row">  
+                    <label>Promedio edad:</label> <input type="text" id="prom"/> </select>
+                </div>  
+                <div class="row">  
+                    <input type="button" value="Calcular promedio" onclick="calcularPromedio()"  />
+                </div>  
+              
+                <div>
+                    <h1>TABLA</h1>
+                    <label>
+                        <input type="checkbox" checked="true" id="cb_id" value="cb_id" onchange="OcultarColumnad(0)">ID
+                    </label>
+                    <label>
+                        <input type="checkbox" id="cb_nombre"  checked="true" value="cb_nombre" onchange="OcultarColumnad(1)">Nombre
+                    </label>
+                    <label>
+                        <input type="checkbox" id="cb_apellido"   checked="true"value="cb_apellido" onchange="OcultarColumnad(2)">Apellido
+                    </label>
+                    <label>
+                        <input type="checkbox" id="cb_edad"  checked="true" value="cb_edad " onchange="OcultarColumnad(3)">Edad
+                    </label>                   
+                    <table id="tabla" class="grilla tabla">
+                    <thead>                    
+                    <tr>
+                        <th> ID</th>
+                        <th> Nombre</th>
+                        <th> Apellido</th>
+                        <th> Edad</th>
+                        <th> Sexo</th>
+                    </tr>
+                    </thead>
+                    <tbody id="body_id" >
+                    </tbody>
+                </table>
+            </div>
+                   
+            
+</body>
+</html>
